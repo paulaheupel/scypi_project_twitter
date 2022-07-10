@@ -8,7 +8,6 @@ def word_count(user, term):
     '''
     tweets_of_user = tweets[tweets['author'] == user]
     result = tweets_of_user.assign(word_occurence = 0)
-    #pd.to_datetime(result['date_time'])
     for index in result.index:
         words = result['content'][index].split()
         term_occurence = words.count(term)
@@ -40,7 +39,9 @@ def overview_user(user):
 def activity_user(user):
     '''
     '''
-    pass
+    tweets_of_user = tweets[tweets['author'] == user]
+    tweets_of_user = tweets_of_user.assign(activity = 1)
+    return tweets_of_user[['date_time', 'activity']]
 
 if __name__ == "__main__":
     print(word_count('ddlovato', 'back'))
