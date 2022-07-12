@@ -3,7 +3,7 @@ import pandas as pd
 def load_data_to_df(data_path, cols_delete = []):
     '''
     expects a path to the data as a parameter and returns a dataframe of the given data
-    expects a list of column-names that should be deleted to give to tidy_up_data as second parameter
+    optional: a list of column-names that should be deleted to give to tidy_up_data as second parameter
     also calls tidy_up_data on the dataframe before returning it
     '''
     tweets_df = pd.read_csv(data_path)
