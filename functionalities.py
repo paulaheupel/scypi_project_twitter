@@ -1,5 +1,6 @@
 import pandas as pd
 from load_data import *
+from collections import Counter
 
 tweets = load_data_to_df("data/tweets.csv", ["language", "id"])
 
@@ -50,18 +51,15 @@ def overview_user(user):
     '''
     expects a user as parameter (string)
     returns an overview of the user including most used words, most popular tweet and 3 latest tweets
-    as a list [[list of most used words], most popular tweet,[list of 3 latest tweets]]
+    as a list [[list of most used words], most popular tweet, latest tweet]
     '''
     tweets_of_user = tweets[tweets['author'] == user]
     tweets_of_user['date_time'] = pd.to_datetime(tweets_of_user['date_time'])
-    latest_tweet = tweets_of_user.iloc[tweets_of_user['date_time'].argmax()]
-    #tweets_of_user = tweets_of_user.set_index('date_time')
-    #latest_date = tweets_of_user.index.max()
-    result = []
-    most_used_words = []
-    #latest_tweet = tweets_of_user.loc[latest_date]
-    most_popular_tweet = tweets.loc[tweets['number_of_likes'].idxmax()]['content']
-    return latest_tweet
+    most_used_words = Counter(" ".join(tweets_of_user['content']).split()).most_common(10)
+    most_popular_tweet = tweets.loc[tweets_of_user['number_of_likes'].idxmax()]['content']
+    latest_tweet = tweets_of_user.iloc[tweets_of_user['date_time'].argmax()]['content']
+    result = [most_used_words, most_popular_tweet, latest_tweet]
+    return result
 
 def activity_user(user):
     '''
