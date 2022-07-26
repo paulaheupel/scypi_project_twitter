@@ -6,7 +6,7 @@ def load_data_to_df(data_path, cols_delete = []):
     optional: a list of column-names that should be deleted to give to tidy_up_data as second parameter
     also calls tidy_up_data on the dataframe before returning it
     '''
-    tweets_df = pd.read_csv(data_path)
+    tweets_df = pd.read_csv(data_path, parse_dates=['date_time'])
     tidy_tweets = tidy_up_data(tweets_df, cols_delete)
     return tidy_tweets
 

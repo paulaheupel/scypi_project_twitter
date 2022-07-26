@@ -10,12 +10,14 @@ def word_count(user, term):
     returns a dataframe containing the amount of the words for each tweet (and the date time for them)
     '''
     tweets_of_user = tweets[tweets['author'] == user]
+    tweets_of_user = pd.DataFrame(tweets_of_user)
     result = tweets_of_user.assign(word_occurence = 0)
     for index in result.index:
         words = result['content'][index].split()
         term_occurence = words.count(term)
         result['word_occurence'][index] = term_occurence
-    return result[['date_time', 'word_occurence']]
+    result = result.groupby(result['date_time'].dt.date).sum('word_occurence')
+    return result[['word_occurence']]
 
 def popularity(user1, user2):
     '''
@@ -71,4 +73,4 @@ def activity_user(user):
     return tweets_of_user[['date_time', 'activity']]
 
 if __name__ == "__main__":
-    print(overview_user('instagram'))
+    print(word_count('instagram', 'this'))
