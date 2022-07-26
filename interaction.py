@@ -1,11 +1,7 @@
-from code import interact
-from matplotlib import widgets
-import pandas as pd
-from tables import Description
 from load_data import *
 from functionalities import *
+from main_input_output import *
 from matplotlib import pyplot as plt
-import numpy as np
 
 from matplotlib.widgets import RadioButtons
 from matplotlib.widgets import TextBox
@@ -26,7 +22,7 @@ overview_user_button = Button(axes5,'overview user')
 
 def click_word_count(val):
 
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(9, 7))
+    fig = plt.figure(figsize=(9,7))
 
     rax = plt.axes([0.1, 0, 0.4, 0.5])
     radio = RadioButtons(rax, ('katyperry',
@@ -71,19 +67,107 @@ def click_word_count(val):
     plt.show()
 
 def click_popularity(val):
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(9, 7))
+    fig = plt.figure(figsize=(9,7))
+    rax = plt.axes([0.01, 0.4, 0.4, 0.5])
+    radio1 = RadioButtons(rax, ('katyperry',
+                    'justinbieber',
+                    'tylorswift13',
+                    'BarackObama',
+                    'rihanna',
+                    'YouTube',
+                    'ladygaga',
+                    'TheEllenShow',
+                    'Twitter',
+                    'jtimberlake',
+                    'KimKardashian',
+                    'britneyspears',
+                    'Cristiano',
+                    'selenagomez',
+                    'cnnbrk',
+                    'jimmyfallon',
+                    'ArianaGrande',
+                    'shakira',
+                    'instagram',
+                    'ddlovato'))
+
+    def user1(choice):
+        result = popularity(choice,'instagram')
+
+    radio1.on_clicked(user1)
+
+    rax = plt.axes([0.5, 0.4, 0.4, 0.5])
+    radio2 = RadioButtons(rax, ('katyperry',
+                    'justinbieber',
+                    'tylorswift13',
+                    'BarackObama',
+                    'rihanna',
+                    'YouTube',
+                    'ladygaga',
+                    'TheEllenShow',
+                    'Twitter',
+                    'jtimberlake',
+                    'KimKardashian',
+                    'britneyspears',
+                    'Cristiano',
+                    'selenagomez',
+                    'cnnbrk',
+                    'jimmyfallon',
+                    'ArianaGrande',
+                    'shakira',
+                    'instagram',
+                    'ddlovato'))
+
+    def user2(choice):
+        result = popularity(choice,'instagram')
+    radio2.on_clicked(user2)
+
     plt.show()
 
 def click_filter_term(val):
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(9, 7))
+    fig = plt.figure(figsize=(9,7))
+
+    def submit(text):
+        result = filter_term(text)
+
+    axbox = plt.axes([0.1, 0.9, 0.8, 0.075])
+    text_box = TextBox(axbox, 'Term')
+    text_box.on_submit(submit)
     plt.show()
 
 def click_filter_term_user(val):
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(9, 7))
+    fig = plt.figure(figsize=(9,7))
     plt.show()
 
 def click_overview_user(val):
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(9, 7))
+    fig = plt.figure(figsize=(9,7))
+
+    rax = plt.axes([0.1, 0.4, 0.4, 0.5])
+    radio = RadioButtons(rax, ('katyperry',
+                    'justinbieber',
+                    'tylorswift13',
+                    'BarackObama',
+                    'rihanna',
+                    'YouTube',
+                    'ladygaga',
+                    'TheEllenShow',
+                    'Twitter',
+                    'jtimberlake',
+                    'KimKardashian',
+                    'britneyspears',
+                    'Cristiano',
+                    'selenagomez',
+                    'cnnbrk',
+                    'jimmyfallon',
+                    'ArianaGrande',
+                    'shakira',
+                    'instagram',
+                    'ddlovato'))
+
+    def user(choice):
+        result = overview_user(choice)
+
+
+    radio.on_clicked(user)
     plt.show()
 
 word_count_button.on_clicked(click_word_count)

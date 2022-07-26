@@ -73,4 +73,4 @@ def display_activity_user(user):
     plt.tight_layout()
     plt.show()
 
-display_activity_user('ddlovato')
+#display_activity_user('ddlovato')

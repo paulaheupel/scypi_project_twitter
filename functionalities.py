@@ -75,4 +75,4 @@ def activity_user(user):
     return tweets_of_user[['date_time', 'activity']]
 
 if __name__ == "__main__":
-    print(word_count('instagram', 'this'))
+    print(overview_user('instagram'))
