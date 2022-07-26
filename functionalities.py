@@ -29,6 +29,8 @@ def popularity(user1, user2):
     '''
     popularity_u1 = tweets[tweets['author'] == user1][['author', 'number_of_likes', 'number_of_shares', 'date_time']]
     popularity_u2 = tweets[tweets['author'] == user2][['author', 'number_of_likes', 'number_of_shares', 'date_time']]
+    popularity_u1 = popularity_u1.groupby(popularity_u1['date_time'].dt.date).agg({'number_of_likes' : sum, 'number_of_shares' : sum})
+    popularity_u2 = popularity_u2.groupby(popularity_u2['date_time'].dt.date).agg({'number_of_likes' : sum, 'number_of_shares' : sum})
     result = [popularity_u1, popularity_u2]
     return result
 
