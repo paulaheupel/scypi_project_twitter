@@ -71,8 +71,10 @@ def activity_user(user):
     returns the activity of the given user over time (tweet frequency over time)
     '''
     tweets_of_user = tweets[tweets['author'] == user]
-    tweets_of_user = tweets_of_user.assign(activity = 1)
-    return tweets_of_user[['date_time', 'activity']]
+    tweets_of_user = pd.DataFrame(tweets_of_user)
+    result = tweets_of_user.assign(activity = 1)
+    result = result.groupby(result['date_time'].dt.date).sum('activity')
+    return result[['activity']]
 
 if __name__ == "__main__":
-    print(overview_user('instagram'))
+    print(filter_term('shadow'))
