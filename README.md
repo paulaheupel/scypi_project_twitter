@@ -19,7 +19,7 @@ https://www.kaggle.com/datasets/mmmarchetti/tweets-dataset
 Used libraries: Numpy, Pandas, Matplotlib
 
 ## Usage
-- run main.py
+- run [main.py](main.py)
 - choose one out of six functionalities 
 - a new window pops up and now you can enter your preferred input
   - word count: choose a user for whom you want to know the word count for your term of choice, additionally you can interactively play around with the time window of your choice 
