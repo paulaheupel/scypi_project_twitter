@@ -60,14 +60,27 @@ def display_popularity(user1, user2):
 
 def display_filter_term(term):
     result = filter_term(term)
+    result = pd.DataFrame(result)
+    display_df(result)
 
 def display_filter_term_user(term, user):
-    result = filter_term_user(term)
+    result = filter_term_user(term,user)
+    result = pd.DataFrame(result)
+    display_df(result)
+
+def display_df(result):
+    fig = plt.figure(figsize=(12, 6))
+    ax = fig.add_subplot(121)
+    bbox=[0, 0, 1, 1]
+    ax.axis('off')
+    mpl_table = ax.table(cellText = result.values, rowLabels = result.index, bbox=bbox, colLabels=result.columns)
+    mpl_table.auto_set_font_size(True)
+    plt.show()
 
 def display_overview_user(user):
     result = overview_user(user)
 
-    fig = plt.figure(1, figsize=(12, 6))
+    fig = plt.figure(figsize=(12, 6))
     text = fig.text(0.05,0.9, '10 most used words: ', ha='left', va='center', size=15)
     text.set_path_effects([path_effects.Normal()])
     for i in range(10):
@@ -119,4 +132,4 @@ def display_activity_user(user):
     plt.tight_layout()
     plt.show()
 
-#display_overview_user('instagram')
+display_filter_term_user('instagram', 'instagram')
