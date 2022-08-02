@@ -19,6 +19,14 @@ https://www.kaggle.com/datasets/mmmarchetti/tweets-dataset
 Used libraries: Numpy, Pandas, Matplotlib
 
 ## Usage
+- choose one out of six functionalities 
+- a new window pops up and now you can enter your prefered input
+  - word count: choose a user for whom you want to now the word count for your term of choice, additionaly you can interactively play around with the time window of your choice 
+  - popularity: choose two users whose popularity based on their likes and shares you want to compare
+  - filter term: choose a term and you get all the tweets which contain this term
+  - filter term user: choose a term and an user and you get all  the tweets of this user that contain this term
+  - overview user: choose a user and you get a comprehnsive overview of their most used words, their most popular tweet and their latest tweet
+  - activity user: choose a user and you get their twitter activity based on thier tweet frequency, additionaly you can interactively play around with the time window of your choice 
 
 
 ## Struggles
