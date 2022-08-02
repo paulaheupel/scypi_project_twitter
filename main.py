@@ -1,6 +1,6 @@
 from load_data import *
 from functionalities import *
-from main_input_output import *
+from display_functions import *
 from matplotlib import pyplot as plt
 
 from matplotlib.widgets import RadioButtons
