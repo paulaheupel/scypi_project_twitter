@@ -2,7 +2,7 @@
 
 As a project we wanted to create an ineractive tool to explore a twitter dataset that holds tweets of the 20 most popular twitter users from 2009 to 2017.
 
-Link to the datasaet:
+Link to the dataset:
 https://www.kaggle.com/datasets/mmmarchetti/tweets-dataset
 
 ## Structure
