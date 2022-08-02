@@ -4,6 +4,7 @@ from matplotlib.widgets import SpanSelector
 from pandas import Timestamp
 from functionalities import *
 import matplotlib.dates as dates
+import matplotlib.patheffects as path_effects
 
 def display_word_count(user, term):
     df = word_count(user, term)
@@ -66,6 +67,20 @@ def display_filter_term_user(term, user):
 def display_overview_user(user):
     result = overview_user(user)
 
+    fig = plt.figure(1, figsize=(12, 6))
+    text = fig.text(0.05,0.9, '10 most used words: ', ha='left', va='center', size=15)
+    text.set_path_effects([path_effects.Normal()])
+    for i in range(10):
+        temp_text = fig.text(0.3+i*0.1, 0.9, result[0][i], ha='center', va='center', size=10)
+        temp_text.set_path_effects([path_effects.Normal()])
+    
+    text = fig.text(0.05,0.6, 'Most popular tweet: ', ha='left', va='center', size=15)
+    text = fig.text(0.3,0.6, result[1], ha='left', va='center', size=10)
+    text = fig.text(0.05,0.3, 'Latest tweet: ', ha='left', va='center', size=15)
+    text = fig.text(0.3,0.3, result[2], ha='left', va='center', size=10)
+
+    plt.show()
+
 def display_activity_user(user):
 
     df = activity_user(user)
@@ -104,4 +119,4 @@ def display_activity_user(user):
     plt.tight_layout()
     plt.show()
 
-#display_word_count('ddlovato', 'the')
+#display_overview_user('instagram')

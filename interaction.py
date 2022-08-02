@@ -25,6 +25,9 @@ activity_user_button = Button(axes6,'activity user')
 chosen = ''
 text = ''
 
+def safe(choice):
+    chosen = choice
+
 def click_word_count(val):
 
     fig = plt.figure(figsize=(9,7))
@@ -52,7 +55,7 @@ def click_word_count(val):
                     'ddlovato'))
 
     def user(choice):
-        chosen = choice
+        safe(choice)
 
     radio.on_clicked(user)
 
@@ -60,7 +63,7 @@ def click_word_count(val):
         display_word_count(chosen, text)
 
     axbox = plt.axes([0.1, 0.9, 0.8, 0.075])
-    text_box = TextBox(axbox, 'Term')
+    text_box = TextBox(axbox, 'Term', initial = 'Enter term here')
     text_box.on_submit(submit)
 
     plt.show()
@@ -90,8 +93,8 @@ def click_popularity(val):
                     'ddlovato'))
 
     def user1(choice):
-        chosen = choice
-        
+        safe(choice)
+
     radio1.on_clicked(user1)
 
     rax = plt.axes([0.5, 0.4, 0.4, 0.5])

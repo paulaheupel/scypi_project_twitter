@@ -60,7 +60,7 @@ def overview_user(user):
     tweets_of_user = tweets[tweets['author'] == user]
     tweets_of_user['date_time'] = pd.to_datetime(tweets_of_user['date_time'])
     most_used_words = Counter(" ".join(tweets_of_user['content']).split()).most_common(10)
-    most_popular_tweet = tweets.loc[tweets_of_user['number_of_likes'].idxmax()]['content']
+    most_popular_tweet = tweets_of_user.loc[tweets_of_user['number_of_likes'].idxmax()]['content']
     latest_tweet = tweets_of_user.iloc[tweets_of_user['date_time'].argmax()]['content']
     result = [most_used_words, most_popular_tweet, latest_tweet]
     return result
