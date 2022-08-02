@@ -33,7 +33,12 @@ Used libraries: Numpy, Pandas, Matplotlib
 ## Struggles
 We struggled to incorporate the interactive parts in our tool.
 The spanselector did not work very well with a datetime index but we managed to find a workaround for that problem.
-What remains a problem until now is the issue of saving entries from textboxes or the choice made with the radiobuttons in order to be able ot access it later. This is necessary when working with to sets of radiobuttons because two users can be selected.
+What remains a problem until now is the issue of saving entries from textboxes or the choice made with the radiobuttons in order to be able ot access it later.
+This is necessary when working with two sets of radiobuttons because two users can be selected or when the text entered into a textbox is required later on.
+The functionalities in the background are working proplerly but can not all be accessed correctly through the interface due to that issue.
+Functions where a user and a term or two users have to be selected are therefore not working properly in combiantion with the interface.
+Our approach was to save the entries from the textboxes and the user that was chosen first to variables and access them later when calling the function.
+Unfortunately we were not able to make that work and could not find another workaround for that issue.
 
 
 ## Authors
