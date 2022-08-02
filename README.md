@@ -35,10 +35,18 @@ We struggled to incorporate the interactive parts in our tool.
 The spanselector did not work very well with a datetime index but we managed to find a workaround for that problem.
 What remains a problem until now is the issue of saving entries from textboxes or the choice made with the radiobuttons in order to be able ot access it later.
 This is necessary when working with two sets of radiobuttons because two users can be selected or when the text entered into a textbox is required later on.
+
 The functionalities in the background are working proplerly but can not all be accessed correctly through the interface due to that issue.
 Functions where a user and a term or two users have to be selected are therefore not working properly in combiantion with the interface.
 Our approach was to save the entries from the textboxes and the user that was chosen first to variables and access them later when calling the function.
 Unfortunately we were not able to make that work and could not find another workaround for that issue.
+
+Another thing that made our work a little more difficult is that the textboxes and radiobuttons are not alwayys visualized or working the way one would expect them to.
+For example when one of us types something in a textbox, the text doesn't show, although entering the text afterwards does work and also calls the expected function and provides the expected output.
+For the other one of us, the written text is visible, but the entering doesn't work and the attached function is not being called.
+This confused us, especially because we are working with the same code and also have similar computers.
+The radiobuttons and spanselectors also only work properly at one of our computers.
+This made working remotely extremely difficult.
 
 
 ## Authors
