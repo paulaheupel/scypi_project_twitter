@@ -68,16 +68,29 @@ def display_popularity(user1, user2):
     plt.show()
 
 def display_filter_term(term):
+    '''
+    expects a sinput a string with a term and creates an output that
+    displays all the tweets containing that term
+    '''
     result = filter_term(term)
     result = pd.DataFrame(result)
     display_df(result)
 
 def display_filter_term_user(term, user):
+    '''
+    expects a sinput two strings with a term and a user and creates an output that
+    displays all the tweets containing that term by that user
+    '''
     result = filter_term_user(term,user)
     result = pd.DataFrame(result)
     display_df(result)
 
 def display_df(result):
+    '''
+    helper function to display the tweets from display_filter_term and display_filter_term_user
+    in order to avoid code redundancy
+    takes a df as input and outputs the values in a figure
+    '''
     fig = plt.figure(figsize=(12, 6))
     ax = fig.add_subplot(121)
     bbox=[0, 0, 1, 1]
@@ -87,6 +100,10 @@ def display_df(result):
     plt.show()
 
 def display_overview_user(user):
+    '''
+    takes as input a string with a user und creates a plot as output
+    that displays the 10 most used words of the user, the most popular and the latest tweet
+    '''
     result = overview_user(user)
 
     fig = plt.figure(figsize=(12, 6))
@@ -104,7 +121,10 @@ def display_overview_user(user):
     plt.show()
 
 def display_activity_user(user):
-
+    '''
+    takes as input a user (string) and creates a plot as output that shows tha activity of the user over time
+    incorporates a spanselector so that th user can take a closer look at different timespans
+    '''
     df = activity_user(user)
 
     fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 6))
@@ -140,5 +160,3 @@ def display_activity_user(user):
     )
     plt.tight_layout()
     plt.show()
-
-#display_word_count('instagram', 'this')
