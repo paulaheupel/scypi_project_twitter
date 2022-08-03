@@ -29,6 +29,10 @@ chosen = ''
 entered_text = ''
 
 def click_word_count(val):
+    '''
+    When the word count is clicked a new window pops up with a radio button for the user choice and a text box for entering a term
+    The selected user and the entered term are passed on to the display_word_count function
+    '''
 
     fig = plt.figure(figsize=(9,7))
 
@@ -51,6 +55,10 @@ def click_word_count(val):
     plt.show()
 
 def click_popularity(val):
+    '''
+    When the popularity is clicked a new window pops up with two radio buttons for the user choice
+    The selected users are passed on to the display_popularity function
+    '''
     fig = plt.figure(figsize=(9,7))
     rax = plt.axes([0.01, 0.4, 0.4, 0.5])
 
@@ -71,6 +79,10 @@ def click_popularity(val):
     plt.show()
 
 def click_filter_term(val):
+    '''
+    When the filter term is clicked a new window pops up with a text box for entering a term
+    The entered term is passed on to the display_filter_term function
+    '''
     fig = plt.figure(figsize=(9,7))
 
     def submit(text):
@@ -82,6 +94,10 @@ def click_filter_term(val):
     plt.show()
 
 def click_filter_term_user(val):
+    '''
+    When the filter term user is clicked a new window pops up with a radio button for the user choice and a text box for entering a term
+    The entered term is passed on to the display_filter_term function
+    '''
     fig = plt.figure(figsize=(9,7))
 
     rax = plt.axes([0.1, 0, 0.4, 0.5])
@@ -103,6 +119,10 @@ def click_filter_term_user(val):
     plt.show()
 
 def click_overview_user(val):
+    '''
+    When the overview user is clicked a new window pops up with a radio button for the user choice
+    The selected user is passed on to the display_overview_user function
+    '''
     fig = plt.figure(figsize=(9,7))
 
     rax = plt.axes([0.1, 0.4, 0.4, 0.5])
@@ -115,6 +135,11 @@ def click_overview_user(val):
     plt.show()
 
 def click_activity_user(val):
+    '''
+    When the activity user is clicked a new window pops up with a radio button for the user choice
+    The selected user is passed on to the display_activity_user function
+    '''
+    
     fig = plt.figure(figsize=(9,7))
 
     rax = plt.axes([0.1, 0.4, 0.4, 0.5])
