@@ -42,7 +42,7 @@ def filter_term(term):
     result = tweets[tweets['content'].str.contains(term)]
     return result['content']
 
-def filter_term_user(user, term):
+def filter_term_user(term, user):
     '''
     expects a user (string) and a term (string) as parameter
     returns all the tweets of the given user containing the term

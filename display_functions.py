@@ -7,6 +7,10 @@ import matplotlib.dates as dates
 import matplotlib.patheffects as path_effects
 
 def display_word_count(user, term):
+    '''
+    expects as input two strings, one for the user and one for the term
+    creates a plot of frequency of use with a spanselector where user can choose a span to take a closer look at
+    '''
     df = word_count(user, term)
 
     fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 6))
@@ -43,18 +47,23 @@ def display_word_count(user, term):
     plt.show()
 
 def display_popularity(user1, user2):
+    '''
+    expects as input two strings for the two users
+    creates two plots comparing the shares and the likes of tweets of both users over time
+    '''
     result = popularity(user1, user2)
     df_u1 = result[0]
     df_u2 = result[1]
 
     fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 6))
 
-    ax1.plot(df_u1.index, df_u1['number_of_likes'])
-    ax1.plot(df_u2.index, df_u2['number_of_likes'])
+    ax1.plot(df_u1.index, df_u1['number_of_likes'], label = user1)
+    ax1.plot(df_u2.index, df_u2['number_of_likes'], label = user2)
     ax1.set_title('Recieved likes of both users')
-    ax2.plot(df_u1.index, df_u1['number_of_shares'])
-    ax2.plot(df_u2.index, df_u2['number_of_shares'])
+    ax2.plot(df_u1.index, df_u1['number_of_shares'], label = user1)
+    ax2.plot(df_u2.index, df_u2['number_of_shares'], label = user2)
     ax2.set_title('Recieved shares of both users')
+    plt.legend()
     plt.tight_layout()
     plt.show()
 
@@ -132,4 +141,4 @@ def display_activity_user(user):
     plt.tight_layout()
     plt.show()
 
-display_filter_term_user('instagram', 'instagram')
+#display_word_count('instagram', 'this')

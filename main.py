@@ -26,10 +26,7 @@ users = ('katyperry', 'justinbieber', 'tylorswift13', 'BarackObama', 'rihanna', 
         'Twitter', 'jtimberlake', 'KimKardashian', 'britneyspears', 'Cristiano', 'selenagomez', 'cnnbrk', 'jimmyfallon',
         'ArianaGrande', 'shakira', 'instagram', 'ddlovato')
 chosen = ''
-text = ''
-
-def safe(choice):
-    chosen = choice
+entered_text = ''
 
 def click_word_count(val):
 
@@ -39,12 +36,13 @@ def click_word_count(val):
     radio = RadioButtons(rax, users)
 
     def user(choice):
-        safe(choice)
+        display_word_count(choice, entered_text)
 
     radio.on_clicked(user)
 
     def submit(text):
-        display_word_count(chosen, text)
+        global entered_text
+        entered_text = text
 
     axbox = plt.axes([0.1, 0.9, 0.8, 0.075])
     text_box = TextBox(axbox, 'Term', initial = 'Enter term here')
@@ -55,10 +53,12 @@ def click_word_count(val):
 def click_popularity(val):
     fig = plt.figure(figsize=(9,7))
     rax = plt.axes([0.01, 0.4, 0.4, 0.5])
+
     radio1 = RadioButtons(rax, users)
 
     def user1(choice):
-        safe(choice)
+        global chosen
+        chosen = choice
 
     radio1.on_clicked(user1)
 
@@ -88,18 +88,13 @@ def click_filter_term_user(val):
     radio = RadioButtons(rax, users)
 
     def user(choice):
-        result = word_count(choice,'')
-        x = result['date_time']
-        y = result['word_occurence']
-        ax1.plot(x, y) 
+        display_filter_term_user(entered_text, choice)
 
     radio.on_clicked(user)
 
     def submit(text):
-        result = word_count('',text)
-        x = result['date_time']
-        y = result['word_occurence']
-        ax1.plot(x, y) 
+        global entered_text
+        entered_text = text
 
     axbox = plt.axes([0.1, 0.9, 0.8, 0.075])
     text_box = TextBox(axbox, 'Term')
