@@ -22,10 +22,10 @@ Used libraries: Numpy, Pandas, Matplotlib
 - run [main.py](main.py)
 - choose one out of six functionalities 
 - a new window pops up and now you can enter your preferred input
-  - word count: choose a user for whom you want to know the word count for your term of choice, additionally you can interactively play around with the time window of your choice 
+  - word count: choose a term (first) and a user (second) for whom you want to know the word count for your term of choice, additionally you can interactively play around with the time window of your choice 
   - popularity: choose two users whose popularity which is based on their likes and shares you want to compare
   - filter term: choose a term and you get all the tweets which contain this term
-  - filter term user: choose a term and a user and you get all  the tweets of this user that contain this term
+  - filter term user: choose a term (first) and a user (second) and you get all  the tweets of this user that contain this term
   - overview user: choose a user and you get a comprehensive overview of their most used words, their most popular tweet and their latest tweet
   - activity user: choose a user and you get their Twitter activity based on their tweet frequency, additionally you can interactively play around with the time window of your choice 
 
