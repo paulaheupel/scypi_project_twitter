@@ -1,4 +1,4 @@
-# Exploring a twitter dataset of the 20 most famous twitter users
+# Exploring a twitter dataset of the 20 most popular twitter users
 
 As a project we wanted to create an ineractive tool to explore a twitter dataset that holds tweets of the 20 most popular twitter users from 2009 to 2017.
 
@@ -31,15 +31,11 @@ Used libraries: Numpy, Pandas, Matplotlib
 
 
 ## Struggles
-We struggled to incorporate the interactive parts in our tool.
+We struggled a little to incorporate the interactive parts in our tool.
 The spanselector did not work very well with a datetime index but we managed to find a workaround for that problem.
-What remains a problem until now is the issue of saving entries from textboxes or the choice made with the radiobuttons in order to be able ot access it later.
+Another problem we faced was the issue of saving entries from textboxes or the choice made with the radiobuttons in order to be able ot access it later.
 This is necessary when working with two sets of radiobuttons because two users can be selected or when the text entered into a textbox is required later on.
-
-The functionalities in the background are working proplerly but can not all be accessed correctly through the interface due to that issue.
-Functions where a user and a term or two users have to be selected are therefore not working properly in combiantion with the interface.
-Our approach was to save the entries from the textboxes and the user that was chosen first to variables and access them later when calling the function.
-Unfortunately we were not able to make that work and could not find another workaround for that issue.
+We managed to solve this problem by using global variables (or a global scope) after recieving this hint from one of the tutors. :)
 
 Another thing that made our work a little more difficult is that the textboxes and radiobuttons are not alwayys visualized or working the way one would expect them to.
 For example when one of us types something in a textbox, the text doesn't show, although entering the text afterwards does work and also calls the expected function and provides the expected output.
