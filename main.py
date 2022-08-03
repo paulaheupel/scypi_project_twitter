@@ -36,7 +36,7 @@ def click_word_count(val):
 
     fig = plt.figure(figsize=(9,7))
 
-    rax = plt.axes([0.1, 0, 0.4, 0.5])
+    rax = plt.axes([0.1, 0.3, 0.4, 0.5])
     radio = RadioButtons(rax, users)
 
     def user(choice):
@@ -49,7 +49,7 @@ def click_word_count(val):
         entered_text = text
 
     axbox = plt.axes([0.1, 0.9, 0.8, 0.075])
-    text_box = TextBox(axbox, 'Term', initial = 'Enter term here')
+    text_box = TextBox(axbox, 'Term')
     text_box.on_submit(submit)
 
     plt.show()
@@ -100,7 +100,7 @@ def click_filter_term_user(val):
     '''
     fig = plt.figure(figsize=(9,7))
 
-    rax = plt.axes([0.1, 0, 0.4, 0.5])
+    rax = plt.axes([0.1, 0.3, 0.4, 0.5])
     radio = RadioButtons(rax, users)
 
     def user(choice):

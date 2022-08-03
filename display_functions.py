@@ -107,6 +107,8 @@ def display_overview_user(user):
     result = overview_user(user)
 
     fig = plt.figure(figsize=(12, 6))
+    plt.tight_layout()
+
     text = fig.text(0.05,0.9, '10 most used words: ', ha='left', va='center', size=15)
     text.set_path_effects([path_effects.Normal()])
     for i in range(10):
@@ -117,7 +119,6 @@ def display_overview_user(user):
     text = fig.text(0.3,0.6, result[1], ha='left', va='center', size=10)
     text = fig.text(0.05,0.3, 'Latest tweet: ', ha='left', va='center', size=15)
     text = fig.text(0.3,0.3, result[2], ha='left', va='center', size=10)
-
     plt.show()
 
 def display_activity_user(user):
