@@ -19,6 +19,7 @@ https://www.kaggle.com/datasets/mmmarchetti/tweets-dataset
 Used libraries: Numpy, Pandas, Matplotlib
 
 ## Usage
+- install numpy, pandas and matplolib (via pip install)
 - run [main.py](main.py)
 - choose one out of six functionalities 
 - a new window pops up and now you can enter your preferred input
